@@ -1,15 +1,15 @@
 services:
   app:
-    image: YOUR_REAL_DOCKERHUB_USERNAME/express-app:latest
+    # IMPORTANT: Replace with your actual Docker Hub username and image name
+    image: codexmodex/express-app:latest
     ports:
-      - 3000:3000
-    restart: unless-stopped
+      - "8080:8080" # Update the published port if your Express app uses a different one
+    container_name: express_app
 
   watchtower:
-    container_name: watchtower
-    image: nickfedor/watchtower
+    image: nickfedor/watchtower # The image specified in the course material
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60 # Poll Docker Hub every 60 seconds
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - WATCHTOWER_POLL_INTERVAL=60
-    restart: unless-stopped
+    container_name: watchtower
