@@ -27,4 +27,4 @@ jobs:
           context: .
           push: true
           # IMPORTANT: Change "express-app" to whatever you want to name your image
-          tags: ${{ secrets.DOCKER_USERNAME }}/express-app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/app:latest
