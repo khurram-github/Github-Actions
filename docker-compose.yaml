@@ -1,7 +1,7 @@
 services:
   app:
     # IMPORTANT: Replace with your actual Docker Hub username and image name
-    image: codexmodex/express-app:latest
+    image: codexmodex/app:latest
     ports:
       - "8080:8080" # Update the published port if your Express app uses a different one
     container_name: express_app
